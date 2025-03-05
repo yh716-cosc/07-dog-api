@@ -20,7 +20,7 @@ h1 {
   text-align: center;
   color: #64b5f6;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 42px;
   margin-bottom: 30px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -37,18 +37,6 @@ h1 i {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.breed-selector label {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 19px;
-  color: #bbdefb;
-}
-
-.breed-selector i {
-  margin-right: 8px;
-  color: #64b5f6;
 }
 
 select {
