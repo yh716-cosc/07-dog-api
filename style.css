@@ -1,0 +1,149 @@
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #0a1929;
+  color: #e6f1ff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #64b5f6;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 i {
+  color: #90caf9;
+  margin: 0 10px;
+}
+
+.breed-selector {
+  margin: 30px 0;
+  text-align: center;
+  background-color: #1a2c42;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.breed-selector label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #bbdefb;
+}
+
+.breed-selector i {
+  margin-right: 8px;
+  color: #64b5f6;
+}
+
+select {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  min-width: 250px;
+  background-color: #0d2240;
+  color: #e6f1ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:hover, select:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 8px rgba(100, 181, 246, 0.6);
+  outline: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid #1976d2;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-color: #64b5f6;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+  filter: brightness(1.1);
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 30px 0;
+  color: #64b5f6;
+}
+
+.loading i {
+  margin-right: 10px;
+  color: #90caf9;
+}
+
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 250px;
+    height: 250px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
