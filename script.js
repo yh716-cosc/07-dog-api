@@ -31,7 +31,7 @@ breedSelect.addEventListener('change', function() {
   const selectedBreed = breedSelect.value;
 
   // Build the API URL using the selected breed
-  const url = `https://dog.ceo/api/breed/${selectedBreed}/images/random`;
+  const url = `https://dog.ceo/api/breed/${selectedBreed}/images/random/9`;
 
   // Fetch a random image for the selected breed
   fetch(url)
@@ -40,23 +40,36 @@ breedSelect.addEventListener('change', function() {
       return response.json();
     })
     .then(function(data) {
-      // Get the image URL from the data
-      const imageUrl = data.message;
-      console.log(imageUrl); // Log the image URL to check if it's correct
+      // Get 9 image URLs from the data
+        const imageUrls = data.message;
+        console.log(imageUrls); // Log the image URL to check if it's correct
 
       // Get the gallery element where the image will be displayed
       const gallery = document.getElementById('gallery');
 
-      // Clear the gallery before adding the new image
+      // Clear the gallery before adding the new images
       gallery.innerHTML = '';
 
-      // Create a new image element
-      const dogImage = document.createElement('img');
-      // Set the image element's src to the new image URL
-      dogImage.src = imageUrl;
-      dogImage.alt = `Random ${selectedBreed} Dog`;
+      
+      // Create a new image element for each image URL
+      for (const imageUrl of imageUrls) {
+        const galleryItem = document.createElement('div');
+        galleryItem.classList.add('gallery-item');
 
-      // Add the new image to the gallery
-      gallery.appendChild(dogImage);
-    });
+        // Create a new image element
+        const dogImage = document.createElement('img');
+        // Set the image element's src to the image URL
+        dogImage.src = imageUrl;
+        // Set the alt text for the image
+         dogImage.alt = `Random ${selectedBreed} Dog`;
+
+        // Add the image to the gallery item
+        galleryItem.appendChild(dogImage);
+
+        // Add the gallery item to the gallery
+        gallery.appendChild(galleryItem);
+      }
+
+
+  });
 });
